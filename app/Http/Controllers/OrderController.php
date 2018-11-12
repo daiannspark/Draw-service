@@ -13,7 +13,7 @@ class OrderController extends Controller
         $validation = Validator::make($request->all(), [
             'fullname' => 'required|string|min:3|max:255',
             'phone' => 'required|string|min:3|max:255',
-            'email' => 'required|string|email|min:5|max:255|unique:users',
+            'email' => 'required|string|email|min:5|max:255',
             'comments' => 'required|min:3|max:1000',
             'image' => 'required',
         ]);
@@ -31,7 +31,7 @@ class OrderController extends Controller
         $image->comments = $request->input('comments');
 
         if ($request->hasFile('image')) {
-            $path = $request->image->store('images');
+            $path = $request->image->store('public');
             $image->image = $path;
         }
 

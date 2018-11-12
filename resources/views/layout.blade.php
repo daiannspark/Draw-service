@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/carousel.css"/>
-    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/carousel.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css"/>
 </head>
 
 <body>
@@ -25,6 +25,7 @@
                 <div class="col-lg-12" id="mainNavBar">
                     <div id="navMenu">
                         <a href="/">Gallery</a>
+                        <a href="/blog">What's new?</a>
                         <a href="/order">Upload your photo</a>
                         <a href="/contacts">Contacts</a>
                     </div>
@@ -55,8 +56,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
-    <script type="text/javascript" src="js/cascade-slider.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="/js/cascade-slider.js"></script>
+    <script type="text/javascript" src="/js/script.js"></script>
 </body>
 
 </html>

@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ContactsController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,16 @@ Route::get('/', function () {
     return view('pages/gallery');
 })->name('gallery');
 
+
+
+Route::get('/blog', function () {
+    $blogs = DB::table('blogs')->get();
+
+    return view('pages/blog', ['blogs' => $blogs]);
+})->name('blog');
+
+
+
 Route::get('/order', function () {
     return view('pages/order');
 })->name('order');
@@ -27,11 +38,7 @@ Route::post('/create', function (Request $request, OrderController $orderControl
     return $orderController->index($request);
 })->name('create');
 
-Route::get('/admin', function () {
-    $images = DB::table('images')->get();
 
-    return view('pages/admin', ['images' => $images]);
-})->name('admin')->middleware('auth');
 
 Route::get('/contacts', function () {
     return view('pages/contacts');
@@ -40,6 +47,30 @@ Route::get('/contacts', function () {
 Route::post('/email', function (Request $request, ContactsController $contactsController) {
     return $contactsController->index($request);
 })->name('email');
+
+
+
+
+//Main admin page
+Route::get('/admin', function () {
+    return view('pages/admin');
+})->name('admin')->middleware('auth');
+
+//Admin images page
+Route::get('/admin/images', function () {
+    $images = DB::table('images')->get();
+
+    return view('pages/admin_images', ['images' => $images]);
+})->name('admin.images')->middleware('auth');
+
+//Admin blog page
+Route::get('/admin/blog', function () {
+    return view('pages/admin_blog');
+})->name('admin.blog')->middleware('auth');
+
+Route::post('/admin/blog', function (Request $request, BlogController $blogController) {
+    return $blogController->index($request);
+})->name('admin.blog')->middleware('auth');
 
 Auth::routes();
 
