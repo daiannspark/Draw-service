@@ -4,9 +4,9 @@
 
     @foreach($blogs as $blog )
     <div class="blogItem">
-        Date: {{ $blog->created_at}}<br />
-        Title: {{ $blog->title }}<br />
-        Content: {{ $blog->text }}<br />
+        
+
+        <a href="/blog/{{$blog->id}}">Date: {{ $blog->created_at}} - {{$blog->title}}</a><br />
     </div>
 
     <br />

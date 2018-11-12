@@ -28,6 +28,12 @@ Route::get('/blog', function () {
     return view('pages/blog', ['blogs' => $blogs]);
 })->name('blog');
 
+Route::get('/blog/{blogId}', function ($blogId) {
+    $blog = DB::table('blogs')->where('id', $blogId)->first();
+
+    return view('pages/blogItem', ['blog' => $blog]);
+})->name('blog');
+
 
 
 Route::get('/order', function () {
