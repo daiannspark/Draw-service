@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-use App\Image;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,41 +16,28 @@ use App\Image;
 
 Route::get('/', function () {
     return view('pages/gallery');
-});
+})->name('gallery');
 
 Route::get('/order', function () {
     return view('pages/order');
-});
+})->name('order');
 
-Route::post('/create', function (Request $request) {
+Route::post('/create', function (Request $request, OrderController $orderController) {
 
-    $image = new Image();
+    return $orderController->index($request);
 
-    $image->fullname = $request->input('fullname');
-    $image->phone = $request->input('phone');
-    $image->email = $request->input('email');
-    $image->comments = $request->input('comments');    
-
-    if ($request->hasFile('image')) {
-        $path = $request->image->store('images');
-        $image->image = $path;
-    }
-
-    $image->save();
-    
-    return view('pages/create');
-});
+})->name('create');
 
 Route::get('/admin', function () {
 
     $images = DB::table('images')->get();
 
     return view('pages/admin', ['images' => $images]);
-});
+})->name('admin')->middleware('auth');
 
 Route::get('/contacts', function () {
     return view('pages/contacts');
-});
+})->name('contacts');
 
 
 
@@ -115,3 +102,10 @@ Route::get('/contacts', function () {
 //         return redirect('/');
         
 //         });    
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
