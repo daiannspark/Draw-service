@@ -2,17 +2,17 @@
 
 @section('content')
 
-    @if (count($errors) > 0)
-        <div class="alert alert-danger">
-            <ul class="errorList">
-                @foreach ($errors as $messages)
-                    @foreach ($messages as $message)
-                        <li>{{ $message }}</li>
-                    @endforeach
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul class="errorList">
+            @foreach ($errors as $messages)
+                @foreach ($messages as $message)
+                    <li>{{ $message }}</li>
                 @endforeach
-            </ul>
-        </div>
-    @endif
+            @endforeach
+        </ul>
+    </div>
+@endif
 
 <form method="post" action="/create" enctype="multipart/form-data">
     {{ csrf_field() }}

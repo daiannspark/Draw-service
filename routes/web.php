@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ContactsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,13 +24,10 @@ Route::get('/order', function () {
 })->name('order');
 
 Route::post('/create', function (Request $request, OrderController $orderController) {
-
     return $orderController->index($request);
-
 })->name('create');
 
 Route::get('/admin', function () {
-
     $images = DB::table('images')->get();
 
     return view('pages/admin', ['images' => $images]);
@@ -39,8 +37,11 @@ Route::get('/contacts', function () {
     return view('pages/contacts');
 })->name('contacts');
 
+Route::post('/email', function (Request $request, ContactsController $contactsController) {
+    return $contactsController->index($request);
+})->name('email');
 
-
+Auth::routes();
 
 
 
@@ -102,10 +103,3 @@ Route::get('/contacts', function () {
 //         return redirect('/');
         
 //         });    
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
