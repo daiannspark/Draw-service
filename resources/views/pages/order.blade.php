@@ -3,7 +3,8 @@
 @section('content')
 
 @if (count($errors) > 0)
-    <div class="alert alert-danger">
+   
+<div class="alert alert-danger">
         <ul class="errorList">
             @foreach ($errors as $messages)
                 @foreach ($messages as $message)
@@ -13,6 +14,21 @@
         </ul>
     </div>
 @endif
+
+<div class="iframe" style="text-align: center">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/YbHYSv_8U-k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        <p>Your browser does not support iframes.</p>
+      </iframe>
+    </div>
+<br/>
+<br/>
+<br/>
+<div class="row">
+    <div class="col-lg-12" id="orderTitle" style="text-align: center">
+        <h1> Here You can place your order :) </h1>
+    </div>
+</div>
+<br/>
 
 <form method="post" action="/create" enctype="multipart/form-data">
     {{ csrf_field() }}
@@ -55,6 +71,7 @@
             <button type="submit" class="btn btn-primary">Submit Order</button>
         </div>
     </div>
+
 </form>
 
 @stop

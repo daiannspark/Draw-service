@@ -24,21 +24,17 @@ $(document).ready(function(){
     });  
 
     $( "#all" ).click(function() {
-        $( ".nature, .space, .urban" ).removeClass('hide');
+        $( ".fantasy, .classic" ).removeClass('hide');
       });
 
-    $( "#nature" ).click(function() {
-        $( ".nature" ).removeClass('hide');
-        $( ".space, .urban" ).addClass('hide');
+    $( "#fantasy" ).click(function() {
+        $( ".fantasy" ).removeClass('hide');
+        $( ".classic" ).addClass('hide');
       });
 
-      $( "#space" ).click(function() {
-        $( ".space" ).removeClass('hide');
-        $( ".nature, .urban" ).addClass('hide');
+      $( "#classic" ).click(function() { 
+        $( ".classic" ).removeClass('hide');
+        $( ".fantasy" ).addClass('hide');
       });
 
-      $( "#urban" ).click(function() {
-        $( ".urban" ).removeClass('hide');
-        $( ".nature, .space" ).addClass('hide');
-      });
 });

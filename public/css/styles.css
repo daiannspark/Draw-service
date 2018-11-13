@@ -6,14 +6,19 @@
 #headerImg {
     background: url(../images/backgrounds/background_top.jpg) no-repeat center center;
     background-size: cover;
-    height: 500px;
+    height: 400px;
     width: 100%;
 }
 
-/* #logo {
-    float: left;
-    margin-left: 10px;
-} */
+
+.blogItem {
+    padding-left: 250px;
+    padding-right: 250px;
+}
+
+.blogItem2 {
+    text-align: center;
+}
 
 #mainNavBar {
     text-align: center;
@@ -45,9 +50,14 @@
 }
 
 #gallery div {
-    width: 33%;
+    width: 20%;
     float: right;
     text-align: center;
+}
+
+#orderTitle h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #b36b00;
 }
 
 .hide {
@@ -81,7 +91,7 @@
 #footerImg {
     background: url(../images/backgrounds/background_down.jpg) no-repeat center center;
     background-size: cover;
-    height: 500px;
+    height: 400px;
     width: 100%;
 }
 
@@ -107,6 +117,6 @@ label {
 .allrightreserved {
     text-align: center;
     position: relative;
-    top: 450px;
+    top: 350px;
     color: rgb(255, 228, 196);
 }

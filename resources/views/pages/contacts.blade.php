@@ -18,6 +18,13 @@
     <div id="emailIsSent">Thank you, I will get in touch with you soon!</div>
 @endisset
 
+<div class="row">
+        <div class="col-lg-12 col-sm-12" id="orderTitle" style="text-align: center">
+            <h1>Any questions?</h1>
+            <h1> Please contact me through this simply form :)</h1>
+        </div>
+    </div>
+    <br/>
 <form method="post" action="/email" enctype="multipart/form-data">
     {{ csrf_field() }}
     <div class="form-group row">
