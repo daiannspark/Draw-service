@@ -72,10 +72,16 @@
     color: rgb(255, 228, 196,.5);
 }
 
+#emailIsSent {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #b36b00;
+}
+
 #navigation a {
     border: 1px transparent;
     font-size: 16px;
-    color: black;
+    color: #b36b00;
     text-decoration: none;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     display: inline-block;
@@ -86,6 +92,7 @@
 
 #navigation a:hover {
     background-color: rgb(255, 228, 196,.5);
+    color: black;
 }
 
 #footerImg {
@@ -119,4 +126,8 @@ label {
     position: relative;
     top: 350px;
     color: rgb(255, 228, 196);
+}
+
+.row {
+    margin-right: 15px;
 }
